@@ -1,4 +1,6 @@
 services:
+  redis-server:
+    image: 'redis'
   api:
     build: ./server
     ports:
@@ -7,4 +9,4 @@ services:
   frontend:
     build: ./client
     ports:
-    - "3000-3000"
+    - "3000:3000"
