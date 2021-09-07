@@ -1,0 +1,14 @@
+services:
+  web: 
+    build: 
+      # override dockerfile selection
+      # context: . 
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # dont try to add this
+      - /app/node_modules
+      - .:/app
+    environment:
+      - CHOKIDAR_USEPOLLING=true

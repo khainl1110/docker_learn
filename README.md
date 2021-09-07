@@ -6,3 +6,8 @@
     + add -t to tag the image
 - Run using dockerfile.dev: docker build -f Dockerfile.dev .
 - Want to ignore some files? Use .dockerignore
+
+## Different Docker files for different purposes
+- To override, can use docker compose
+    + context: . 
+    + dockerfile: Dockerfile.dev

@@ -22,31 +22,6 @@ export default function Index() {
             .then(response => setFetchData(response.data))
     }, [])
 
-    let handleChange = (event) => {
-        setReviewUpdate(event.target.value)
-    }
-
-    let submit = () => {
-        axios.post('/api/insert', {
-            bookName, review
-        })
-        .then(() => alert('Success post!'))
-    }
-
-    let remove = (id) => {
-        // eslint-disable-next-line no-restricted-globals
-        if(confirm("Do you want to delete? ")) {
-            axios.delete('/api/delete/${id}')
-            document.location.reload()
-        }
-    }
-
-    let edit = (id) => {
-        axios.put('/api/update/${id}', {
-            reviewUpdate
-        })
-        document.location.reload();
-    }
     return(
         <>
             <h1>Dockerized React App Application</h1>
@@ -63,18 +38,6 @@ export default function Index() {
                     onChange = {(e) => setReview(e.target.value)}
                 />
             </div>
-            <button onClick = {submit}>Submit </button>
-
-            {
-                fetchData.map((val,key) => {
-                    return(
-                        <>
-                            <h2>{val.book_name}</h2>
-                            <h2>{val.book_review} </h2>
-                        </>
-                    )
-                })
-            }
 
         </>
     )
