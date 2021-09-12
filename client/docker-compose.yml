@@ -7,8 +7,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      # dont try to add this
       - /app/node_modules
       - .:/app
+      # something react needs
     environment:
       - CHOKIDAR_USEPOLLING=true
